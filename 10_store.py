@@ -40,3 +40,9 @@ store = {
 #   Лампа - 27 шт, стоимость 1134 руб
 
 # TODO здесь ваш код
+
+for item_name, item_code in goods.items():
+        batches = store[item_code]
+        total_quantity = sum(batch['quantity'] for batch in batches)
+        total_cost = sum(batch['quantity'] * batch['price'] for batch in batches)
+        print(f'{item_name} - {total_quantity} шт, стоимость {total_cost} руб')
