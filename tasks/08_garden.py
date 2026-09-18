@@ -18,19 +18,33 @@ meadow_set = set(meadow)
 # Выведите на консоль все виды цветов
 # TODO здесь ваш код
 
-print(garden_set | meadow_set )
 
 # Выведите на консоль те, которые растут и там и там
 # TODO здесь ваш код
 
-print(garden_set & meadow_set)
+
 
 # Выведите на консоль те, которые растут в саду, но не растут на лугу
 # TODO здесь ваш код
 
-print(garden_set - meadow_set)
+
 
 # Выведите на консоль те, которые растут на лугу, но не растут в саду
 # TODO здесь ваш код
 
-print(meadow_set - garden_set)
+def flowers_analysis(garden, meadow):
+    g = set(garden)
+    m = set(meadow)
+    return g | m, g & m, g - m, m - g
+
+
+def run():
+    all_f, common, only_garden, only_meadow = flowers_analysis(garden, meadow)
+    print('Все виды:', all_f)
+    print('И там, и там:', common)
+    print('Только в саду:', only_garden)
+    print('Только на лугу:', only_meadow)
+
+
+if __name__ == '__main__':
+    run()

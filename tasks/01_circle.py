@@ -10,9 +10,6 @@ radius = 42
 #       пи возьмите равным 3.1415926
 #       точность указывается в функции round()
 
-square = 3.1415926 * radius ** 2
-print(round(square, 4))
-
 
 # Далее, пусть есть координаты точки
 point_1 = (23, 34)
@@ -26,9 +23,6 @@ point_1 = (23, 34)
 #       квадратный корень - это возведение в степень 0.5
 #       операции сравнения дают булевы константы True и False
 
-x1, y1 = point_1
-distance_1 = (x1 ** 2 + y1 ** 2) ** 0.5
-print(distance_1 < radius)
 
 
 # Аналогично для другой точки
@@ -36,10 +30,25 @@ point_2 = (30, 30)
 # Если точка point_2 лежит внутри круга (radius = 42), то выведите на консоль True,
 # Или False, если точка лежит вовне круга.
 
-x2, y2 = point_2
-distance_2 = (x2 ** 2 + y2 ** 2) ** 0.5
-print(distance_2 < radius)
 
+def circle_area(radius, pi=3.1415926):
+    return round(pi * radius ** 2, 4)
+
+
+def is_inside_circle(point, radius):
+    x, y = point
+    return (x ** 2 + y ** 2) ** 0.5 < radius
+
+
+def run():
+    print(circle_area(radius))
+    print(is_inside_circle(point_1, radius))
+    print(is_inside_circle(point_2, radius))
+
+
+if __name__ == '__main__':
+    run()
+    
 # Пример вывода на консоль:
 #
 # 77777.7777

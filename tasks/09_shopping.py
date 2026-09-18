@@ -34,9 +34,9 @@ shops = {
 # }
 # Указать надо только по 2 магазина с минимальными ценами
 
-sweets = {
-    # TODO здесь ваш код
-    'печенье': [
+def build_sweets():
+    return {
+        'печенье': [
             {'shop': 'пятерочка', 'price': 9.99},
             {'shop': 'ашан', 'price': 10.99},
         ],
@@ -52,6 +52,12 @@ sweets = {
             {'shop': 'пятерочка', 'price': 59.99},
             {'shop': 'магнит', 'price': 62.99},
         ],
-}
+    }
 
-print(sweets)
+
+def run():
+    print(build_sweets())
+
+
+if __name__ == '__main__':
+    run()

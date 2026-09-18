@@ -21,9 +21,6 @@ violator_songs_list = [
 # округлите результат до 3 знаков после запятой
 # TODO здесь ваш код
 
-songs = [song for song in violator_songs_list if song[0] in ['Halo', 'Enjoy the Silence', 'Clean']]
-time = sum(song[1] for song in songs)
-print(f'Три песни звучат {round(time, 3)} минут')
 
 # Есть словарь песен группы Depeche Mode
 violator_songs_dict = {
@@ -44,5 +41,21 @@ violator_songs_dict = {
 # Обратите внимание на округление
 # TODO здесь ваш код
 
-time_dict = sum(violator_songs_dict[song] for song in ['Sweetest Perfection', 'Policy of Truth', 'Blue Dress'])
-print(f'А другие три песни звучат {round(time_dict, 3)} минут')
+def songs_time_from_list(songs_list, names):
+    return round(sum(s[1] for s in songs_list if s[0] in names), 3)
+
+
+def songs_time_from_dict(songs_dict, names):
+    return round(sum(songs_dict[n] for n in names), 3)
+
+
+def run():
+    t1 = songs_time_from_list(violator_songs_list, ['Halo', 'Enjoy the Silence', 'Clean'])
+    print(f'Три песни звучат {t1} минут')
+
+    t2 = songs_time_from_dict(violator_songs_dict, ['Sweetest Perfection', 'Policy of Truth', 'Blue Dress'])
+    print(f'А другие три песни звучат {t2} минут')
+
+
+if __name__ == '__main__':
+    run()

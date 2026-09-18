@@ -41,8 +41,20 @@ store = {
 
 # TODO здесь ваш код
 
-for item_name, item_code in goods.items():
-        batches = store[item_code]
-        total_quantity = sum(batch['quantity'] for batch in batches)
-        total_cost = sum(batch['quantity'] * batch['price'] for batch in batches)
-        print(f'{item_name} - {total_quantity} шт, стоимость {total_cost} руб')
+def calc_goods_stats(goods, store):
+    result = []
+    for name, code in goods.items():
+        batches = store[code]
+        qty = sum(b['quantity'] for b in batches)
+        cost = sum(b['quantity'] * b['price'] for b in batches)
+        result.append({'name': name, 'quantity': qty, 'cost': cost})
+    return result
+
+
+def run():
+    for stat in calc_goods_stats(goods, store):
+        print(f"{stat['name']} - {stat['quantity']} шт, стоимость {stat['cost']} руб")
+
+
+if __name__ == '__main__':
+    run()
