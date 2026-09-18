@@ -2,17 +2,17 @@ from importlib import import_module
 
 
 task_modules = [
-    '00_distance',
-    '01_circle',
-    '02_operations',
-    '03_favorite_movies',
-    '04_my_family',
-    '05_zoo',
-    '06_songs_list',
-    '07_secret',
-    '08_garden',
-    '09_shopping',
-    '10_store',
+    'distance',
+    'circle',
+    'operations',
+    'favorite_movies',
+    'my_family',
+    'zoo',
+    'songs_list',
+    'secret',
+    'garden',
+    'shopping',
+    'store',
 ]
 
 
