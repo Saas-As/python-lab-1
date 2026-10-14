@@ -42,7 +42,7 @@ python-lab-1/
 ## Установка
 
 ```bash
-git clone https://github.com/ТВОЙ_НИК/python-lab-1.git
+git clone https://github.com/Saas-As/python-lab-1.git
 cd python-lab-1
 python -m venv .venv
 .venv\Scripts\activate
